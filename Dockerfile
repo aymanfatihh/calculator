@@ -1,3 +1,12 @@
+# Utiliser une image de base
 FROM openjdk:17
-COPY build/libs/calculator-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Copier les fichiers de l'application dans l'image
+COPY . /app
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Commande d'entrée pour exécuter l'application Java
+CMD ["java", "-jar", "votre_application.jar"]
+
